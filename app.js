@@ -16,21 +16,16 @@ const connectionString = "postgres://localhost:5432/dcblog"
 const db = pgp(connectionString)
 
 
-// Will have login/registration
+
 app.get('/', (req,res) => {
     res.send('Login/Registration Page');
-    // After login in user should be redirected to thei page
-    // res.redirect('/blog/user');
 });
 
 app.get('/blog/user', (req,res) => {
-    // console.log('test get');
 
     let userid = 1;
     db.any('SELECT id, post, userid, entrydatetime FROM posts WHERE userid = $1', [userid])
         .then((posts) => {
-            // console.log(posts);
-
             res.render('userblog', {posts: posts});
         })
         .catch((err) => {
@@ -38,10 +33,8 @@ app.get('/blog/user', (req,res) => {
         });
     });
 
-// Handle new posts to be added and redirect
+
 app.post('/blog/user', (req,res) => {
-    // console.log('test post');
-    // console.log(req.body);          // { post: 'test post' }
 
     let post = req.body.post;
 
