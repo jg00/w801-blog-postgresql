@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Blog</title>
+</head>
+<body>
+    <h3>User Blog</h3>
+    <!-- <a href="/user/blog">Add Post</a> -->
+
+    <form action="/blog/user" method="POST">
+        <textarea rows="4" cols="50" name="post"></textarea>
+        <div>
+            <button type="submit">Add Post</button>
+        </div>
+    </form>
+
+    <div id="divSection">
+        {{#posts}}
+            <div class="divPost">
+                <p>Post id: {{id}} - {{entrydatetime}}</p>
+                <textarea readonly rows="4" cols="50" name="post">{{post}}</textarea>
+            </div>
+        {{/posts}}
+    </div>
+</body>
+</html>
+
