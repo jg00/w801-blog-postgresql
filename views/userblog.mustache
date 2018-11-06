@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,700" rel="stylesheet">
     <title>User Blog</title>
 </head>
 <body>
     <h3>User Blog</h3>
+    <!-- <a href="/user/blog">Add Post</a> -->
 
     <form action="/blog/user" method="POST">
         <textarea rows="4" cols="50" name="post"></textarea>
@@ -16,11 +19,25 @@
         </div>
     </form>
 
+    <br><br>
+
     <div id="divSection">
         {{#posts}}
             <div class="divPost">
-                <p>Post id: {{id}} - {{entrydatetime}}</p>
-                <textarea readonly rows="4" cols="50" name="post">{{post}}</textarea>
+                <p id="postHeader">Post id: {{id}} - {{entrydatetime}}</p>
+
+                <textarea disabled  name="post">{{post}}</textarea>
+
+                <form action="/blog/delete/{{id}}" method="POST">
+                    <!-- <input type="hidden" name="id" value="{{id}}"> -->
+                    <button type="submit">Remove Post</button>
+                </form>
+
+                <form action="/blog/update/{{id}}" method="GET">
+                    <button type="submit">Edit Post</button>
+                    <!-- <input type="submit" value="Edit Post"/> -->
+                </form>
+
             </div>
         {{/posts}}
     </div>

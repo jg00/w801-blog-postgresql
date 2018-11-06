@@ -1,0 +1,59 @@
+body {
+    background-color: lightskyblue;
+    font-family: 'Asap', sans-serif;
+
+}
+
+
+
+img {
+    max-width:490px;
+    max-height: auto;
+}
+
+#divDisplay {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.divDislayInner {
+    flex: 1;
+}
+
+
+#postHeader {
+    color: blue;
+    font-size: 0.70em;
+}
+
+
+textarea {
+    height: 4em;
+    width: 34em;
+    background-color: antiquewhite;
+}
+
+@media only screen and (max-width: 490px) {
+    body {
+        background-color: lightblue;
+    }
+
+    img {
+        max-width:100%;
+        max-height: auto;
+    }
+
+
+    #divDisplay {
+        display: inline-flex;
+        /* flex-wrap: wrap; */
+    }
+
+    .divDislayInner {
+        flex: none;
+    }
+
+
+
+
+}
