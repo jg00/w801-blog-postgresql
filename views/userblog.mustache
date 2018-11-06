@@ -10,7 +10,6 @@
 </head>
 <body>
     <h3>User Blog</h3>
-    <!-- <a href="/user/blog">Add Post</a> -->
 
     <form action="/blog/user" method="POST">
         <textarea rows="4" cols="50" name="post"></textarea>
@@ -29,13 +28,11 @@
                 <textarea disabled  name="post">{{post}}</textarea>
 
                 <form action="/blog/delete/{{id}}" method="POST">
-                    <!-- <input type="hidden" name="id" value="{{id}}"> -->
                     <button type="submit">Remove Post</button>
                 </form>
 
                 <form action="/blog/update/{{id}}" method="GET">
                     <button type="submit">Edit Post</button>
-                    <!-- <input type="submit" value="Edit Post"/> -->
                 </form>
 
             </div>
